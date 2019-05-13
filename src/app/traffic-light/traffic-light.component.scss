@@ -1,0 +1,60 @@
+$light-size: 20px;
+$margin-between-light: 5px;
+$padding-traffic-light: 5px;
+
+$height-of-light-body: $light-size*3 + $margin-between-light*4 + $padding-traffic-light*2;
+$pos-of-leg-1: $height-of-light-body;
+$pos-of-leg-2: $height-of-light-body + $height-of-light-body*1.2;
+
+.traffic-light-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .frame {
+    width: 250px;
+    height: 250px;
+    margin: 50px auto;
+
+    .traffic-light {
+      box-sizing: content-box;
+      width: $light-size;
+      padding: $padding-traffic-light;
+      margin: 0 auto;
+      background-color: #3e5151;
+      border-radius: 5px;
+      position: relative;
+
+      &:before {
+        content: '';
+        background-color: inherit;
+        position: absolute;
+        top: $pos-of-leg-1;
+        left: 50%;
+        transform: translateX(-50%);
+        width: $light-size*0.6;
+        height: $height-of-light-body*1.2;
+      }
+
+      &:after {
+        content: '';
+        background-color: inherit;
+        position: absolute;
+        top: $pos-of-leg-2;
+        left: 50%;
+        transform: translateX(50%);
+        width: $light-size;
+        height: $light-size*0.5;
+        border-radius: 2px;
+      }
+
+      .light {
+        width: $light-size;
+        height: $light-size;
+        border-radius: 50%;
+        margin: $margin-between-light auto;
+        background-color: gray;
+      }
+    }
+  }
+}
