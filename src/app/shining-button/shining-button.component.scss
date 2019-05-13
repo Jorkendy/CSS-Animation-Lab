@@ -1,0 +1,43 @@
+@import "~src/assets/styles/mixin";
+
+.shining-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px;
+  margin-top: 100px;
+  font-size: 18px;
+  background-color: #fff;
+  border: 1px solid #f27235;
+  color: #9999ff;
+  position: relative;
+  overflow: hidden;
+  @include border-radius(5px);
+  @include box-shadow(0, 14px, 80px, rgba(34, 35, 58, 0.2));
+
+  &:before {
+    content: '';
+    width: 50px;
+    height: 100px;
+    background-color: #fdc830;
+    position: absolute;
+    left: -65%;
+    top: -60%;
+    transform: rotate(20deg);
+    opacity: 0.4;
+  }
+
+  &:active {
+    @include box-shadow(0, 5px, 15px, rgba(0, 0, 0, 0.3));
+  }
+
+  &:hover {
+    &:before {
+      transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+      left: 120%;
+    }
+  }
+}

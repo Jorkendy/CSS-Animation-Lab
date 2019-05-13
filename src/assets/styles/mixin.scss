@@ -1,0 +1,11 @@
+@mixin border-radius($length) {
+  border-radius: $length;
+  -moz-border-radius: $length;
+  -webkit-border-radius: $length;
+}
+
+@mixin box-shadow($horizontalOffset, $verticalOffset, $blurRadius, $spreadRadius) {
+  box-shadow: $horizontalOffset $verticalOffset $blurRadius $spreadRadius;
+  -moz-box-shadow: $horizontalOffset $verticalOffset $blurRadius $spreadRadius;
+  -webkit-box-shadow: $horizontalOffset $verticalOffset $blurRadius $spreadRadius;
+}
